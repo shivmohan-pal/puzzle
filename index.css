@@ -1,0 +1,432 @@
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    position: absolute;
+    width: 100%;
+    height: 100hv;
+    background-color: rgba(0, 0, 0, .6);
+    display: grid;
+    grid-template-rows: 1fr;
+    overflow: hidden
+}
+
+.frame {
+    position:relative;
+    background-image: url(images/box22@2x.png);
+    background-size: 100% 100%;
+    display: grid;
+    grid-template-rows: 0.8fr 2fr 0.8fr;
+    max-width: 100%;
+    min-height: 100vh
+}
+
+.moves-count {
+    position: relative;
+    display: inline-grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 3fr 1fr;
+    padding: 10% 5% 8% 8%
+}
+
+.count-box {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr;
+    background-image: url("images/box 2@2x.png");
+    background-size: 100% 100%;
+    padding: 5% 0 4% 3%;
+    margin-right: 10%
+}
+
+.count-box h3 {
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 1fr 0.3fr 0.5fr;
+    font-family: sans-serif;
+    font-size: 3.8vh;
+    top: 15%;
+    color: rgba(135, 65, 25, .9);
+    margin-right: 3%
+}
+
+.counts {
+    text-align: left
+}
+
+.give-up {
+    position: relative;
+    background: url("images/give up@2x.png");
+    background-size: 100% 100%;
+    border: none;
+    transition: opacity ease-in-out 1s;
+    visibility: visible;
+    opacity: 0;
+    transition: transform .2s, opacity ease-in-out 1s
+}
+
+.give-up:hover {
+    transform: scale(1.05)
+}
+
+.game {
+    position: relative;
+    display: grid;
+    padding: 4% 4%
+}
+
+.puzzle {
+    position: relative;
+    background-image: url(images/box33@2x.png);
+    background-size: 100% 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding: 4.5% 4%;
+    grid-row-gap: 1.5%;
+    grid-column-gap: 1.5%
+}
+
+.puzzle div {
+    background-size: 100% 100%;
+    text-align: center;
+    font-size: 34px;
+    font-family: sans-serif;
+    color: #fff;
+    padding-top: 25%;
+    border-radius: 10px;
+    transition: transform .2s
+}
+
+.puzzle div:hover {
+    transform: scale(1.05)
+}
+
+.options {
+    position: relative;
+    display: grid
+}
+
+.options div {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 6%;
+    min-height: 50%;
+    padding: 6%
+}
+
+.hint {
+    position: relative;
+    background: url(images/11@2x.png);
+    background-size: 100% 100%;
+    border: none;
+    transition: transform .2s
+}
+
+.hint:hover {
+    transform: scale(1.05)
+}
+
+.back {
+    position: relative;
+    background: url(images/222@2x.png);
+    background-size: 100% 100%;
+    border: none;
+    transition: transform .2s
+}
+
+.back:hover {
+    transform: scale(1.05)
+}
+
+.close {
+    position: relative;
+    background: url(images/333@2x.png);
+    background-size: 100% 100%;
+    border: none;
+    transition: transform .2s
+}
+
+.close:hover {
+    transform: scale(1.05)
+}
+
+.exit-frame {
+    position: absolute;
+    background: rgba(255, 255, 255, .25);
+    display: grid;
+    grid-template-rows: 0.8fr 2fr 0.8fr;
+    max-width: 100%;
+    min-height: 100vh;
+    visibility: hidden
+}
+
+.ex-box {
+    position: relative;
+    padding: 6.5% 6%;
+    display:grid;
+    grid-row: 2
+}
+
+.exit {
+    position: relative;
+    background: url(images/box444@2x.png);
+    background-size: 100% 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding: 5%
+}
+
+.exit h1 {
+          position:relative;
+          color: rgba(135, 65, 25, .9);
+          font-size: 2.6em;
+          font-family: sans-serif
+          }
+
+.yn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10%;
+    padding: 5%
+}
+
+.yes {
+    position: relative;
+    background: url(images/yes@2x.png);
+    background-size: 100% 100%;
+    border: none
+}
+
+.yes:hover {
+    transform: scale(1.05)
+}
+
+.no {
+    position: relative;
+    background: url(images/no@2x.png);
+    background-size: 100% 100%;
+    border: none
+}
+
+.no:hover {
+    transform: scale(1.05)
+}
+
+.complete {
+    position: absolute;
+    background-image: url(images/box22@2x.png);
+    background-size: 100% 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    transition: opacity ease-in-out 0.6s;
+    visibility: hidden;
+    opacity: 0
+}
+
+.letter-case {
+    position: relative;
+    min-width: 100%;
+    height: 100vh;
+    display: grid
+}
+
+.letter {
+    position: relative;
+    background: url(images/letter.png);
+    background-size: 100% 100%;
+    display: block;
+    grid-template-rows: 0.1fr 0.7fr 0.05fr 0.1fr;
+    width: 80%;
+    height: 92%;
+    margin-top: 8px;
+    padding: 0% 10% 10% 10%;
+    transition: opacity ease 0.6s;
+    opacity: 0;
+    left: -200px;
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 2s;
+    animation: slide 1.3s forwards;
+    grid-row: 2
+}
+
+.note {
+    position: relative;
+    width: 96%;
+    font-size: 1.3vh;
+    transition: opacity ease 0.4s;
+    font-weight: 700
+}
+
+.name {
+    display: inline-grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    transition: opacity ease 0.6s;
+    margin-bottom: 10px
+}
+
+.sign {
+    display: grid;
+    font-weight: 700;
+    font-size: 1.3vh;
+    grid-template-rows: 1fr 0.2fr
+}
+
+.logo {
+    position: relative;
+    width: 100%;
+    margin-top: 18%;
+    opacity: 0;
+    transition: opacity ease-in-out 0.8s;
+    z-index: 3
+}
+
+.logo img {
+    position: relative;
+    width: 25%;
+    height: 100%;
+    transition: transform ease-in-out 1.5s
+}
+
+.pen {
+    transition: opacity ease-in-out 0.8s
+}
+
+.pen img {
+    position: relative;
+    width: 10%;
+    top: 14px;
+    left: 10%;
+    transition: 1.5s, transform ease-in-out 2s
+}
+
+.sin {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr
+}
+
+.sin img {
+    position: relative;
+    width: 70px;
+    height: 25px;
+    left: calc(50% - 35px);
+    opacity: 0;
+    transition: opacity ease-in-out 0.5s;
+    transform: translateZ(0)
+}
+
+.welcome {
+    position: absolute;
+    width: 100%;
+    height: 22vh;
+    top: -200px;
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 2s;
+    animation: down 1s forwards;
+    z-index: 3
+}
+
+@keyframes down {
+    100% {
+        top: 0
+    }
+}
+
+@-webkit-keyframes slide {
+    100% {
+        left: 0
+    }
+}
+
+@keyframes slide {
+    100% {
+        left: 0
+    }
+}
+
+.welcome img {
+    position: relative;
+    width: 45%;
+    height: 100%;
+    left: 40%;
+    opacity: 0
+}
+
+button:focus {
+    outline-style: none
+}
+
+button:active {
+    opacity: .7
+}
+
+@media screen and (min-width:411px) {
+    .frame {
+        width: 411px;
+        height: 100vh;
+        margin-left: calc(50% - 205.5px)
+    }
+
+    .exit-frame {
+        width: 411px;
+        height: 100vh;
+        margin-left: calc(50% - 205.5px)
+    }
+
+    .complete {
+        width: 411px;
+        height: 100vh;
+        margin-left: calc(50% - 205.5px)
+    }
+
+    .letter {
+        margin: 0
+    }
+
+    .note {
+        position: relative;
+        width: 96%;
+        transition: opacity ease 0.4s
+    }
+
+}
+@media screen and (min-height:1000px) {
+    .exit h1 {
+          font-size: 3.6em;
+          }
+
+    .frame {
+        width: 700px;
+        height: 100vh;
+        margin-left: calc(50% - 350px)
+    }
+
+    .exit-frame {
+        width: 700px;
+        height: 100vh;
+        margin-left: calc(50% - 350px)
+    }
+
+    .complete {
+        width: 700px;
+        height: 100vh;
+        margin-left: calc(50% - 350px)
+    }
+    
+    .note {
+           font-size:1.5vh;
+          }
+
+    .sin img {
+              width: 120px;
+              height: 50px;
+              left: calc(50% - 60px);
+              }
+
+}
